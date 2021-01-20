@@ -15,7 +15,7 @@ variable "tags" {
   description = "AWS tags for resources"
   type        = map(any)
   default = {
-    tf_state  = "base"
+    tf_state  = "new"
     terraform = "true"
   }
 }

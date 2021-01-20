@@ -9,9 +9,9 @@ projects:
       when_modified: ["*.tf", "../../../modules/**.tf", "*.md"]
       enabled: true
     apply_requirements: [mergeable, approved]
-    workflow: base
+    workflow: new
 workflows:
-  base:
+  new:
     plan:
       steps:
         - init
