@@ -1,0 +1,37 @@
+---
+- name: "Legacy | AWS | Credentials configuration"
+  hosts: tag_Project_3ants
+  remote_user: ubuntu
+  vars:
+    ansible_ssh_private_key_file: "{{ '~/.ssh/3ants-gp.pem' if (key_name == '3ants-gp') else '~/.ssh/3ants-php.pem' }}"
+  tasks:
+    - name: Ensure AWS Credentials directory
+      file:
+        path: /home/ubuntu/.aws
+        mode: '0775'
+        state: directory
+      when: stage == "aws-credentials" or stage is undefined
+    - name: AWS Credentials
+      template:
+        src: templates/credentials.j2
+        dest: /home/ubuntu/.aws/credentials
+        mode: '0600'
+      when: stage == "aws-credentials" or stage is undefined
+
+- name: "Legacy | Datadog | Agent configuration"
+  hosts: tag_Project_3ants
+  remote_user: ubuntu
+  become: true
+  ignore_errors: yes
+  roles:
+    - role: datadog.datadog
+      when: stage == "datadog" or stage is undefined
+  vars:
+    ansible_ssh_private_key_file: "{{ '~/.ssh/3ants-gp.pem' if (key_name == '3ants-gp') else '~/.ssh/3ants-php.pem' }}"
+  vars_files:
+    - "vars/datadog_common_config.yml"
+    - [ "vars/{{ tags['Ansible'] }}.yml", "vars/datadog_common_checks.yml" ]
+  tasks:
+    - name: Restart Datadog agent
+      shell: "sudo service datadog-agent restart"
+      when: tags['Ansible'] == "intranet" and stage == "datadog" or stage is undefined

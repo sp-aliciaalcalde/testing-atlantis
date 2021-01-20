@@ -1,0 +1,16 @@
+---
+datadog_checks:
+  process:
+    init_config:
+    instances:
+      - name: docker
+        search_string: ['docker', 'dockerd']
+  tcp_check:
+    init_config:
+    instances:
+      - name: http
+        host: localhost
+        port: 80
+      - name: http-pre
+        host: localhost
+        port: 8080

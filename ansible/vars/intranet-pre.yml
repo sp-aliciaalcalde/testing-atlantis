@@ -1,0 +1,19 @@
+---
+datadog_checks:
+  process:
+    init_config:
+    instances:
+      - name: docker
+        search_string: ['docker', 'dockerd']
+  tcp_check:
+    init_config:
+    instances:
+      - name: http-brand
+        host: localhost
+        port: 8082
+      - name: http-media
+        host: localhost
+        port: 8080
+      - name: http-pucp
+        host: localhost
+        port: 8081

@@ -1,0 +1,7 @@
+---
+datadog_checks:
+  process:
+    init_config:
+    instances:
+      - name: docker
+        search_string: ['docker', 'dockerd']

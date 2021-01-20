@@ -1,0 +1,25 @@
+---
+datadog_checks:
+  process:
+    init_config:
+    instances:
+      - name: docker
+        search_string: ['docker', 'dockerd']
+  tcp_check:
+    init_config:
+    instances:
+      - name: http
+        host: localhost
+        port: 80
+      - name: https
+        host: localhost
+        port: 443
+      - name: widget
+        host: localhost
+        port: 5968
+      - name: ws-brand
+        host: localhost
+        port: 5967
+      - name: ws-pucp
+        host: localhost
+        port: 5957

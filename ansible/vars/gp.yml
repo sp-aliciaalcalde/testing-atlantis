@@ -1,0 +1,19 @@
+---
+datadog_checks:
+  process:
+    init_config:
+    instances:
+      - name: docker
+        search_string: ['docker', 'dockerd']
+  tcp_check:
+    init_config:
+    instances:
+      - name: gross-data-media
+        host: localhost
+        port: 5500
+      - name: gross-data-pucp
+        host: localhost
+        port: 6600
+      - name: gross-data-brand
+        host: localhost
+        port: 7700

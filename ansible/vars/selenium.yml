@@ -1,0 +1,13 @@
+---
+datadog_checks:
+  process:
+    init_config:
+    instances:
+      - name: docker
+        search_string: ['docker', 'dockerd']
+  tcp_check:
+    init_config:
+    instances:
+      - name: selenium
+        host: localhost
+        port: 4444

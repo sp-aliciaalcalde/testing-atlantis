@@ -1,0 +1,17 @@
+---
+datadog_api_key: "{{ lookup('aws_ssm', '/datadog/global/api-key', region='eu-west-1') }}"
+datadog_site: "{{ lookup('aws_ssm', '/datadog/global/site', region='eu-west-1') }}"
+datadog_config:
+  apm_config:
+    enabled: false
+  collect_ec2_tags: true
+  logs_enabled: false
+  logs_config:
+    container_collect_all: true
+  process_config:
+    enabled: true
+  config_providers:
+    - name: docker
+      polling: true
+  listeners:
+    - name: docker

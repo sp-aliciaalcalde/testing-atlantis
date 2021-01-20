@@ -1,0 +1,81 @@
+---
+datadog_checks:
+  http_check:
+    init_config:
+    instances:
+      - name: smartprotection
+        url: https://smartprotection.com/es/
+        http_response_status_code: 200
+        check_certificate_expiration: true
+      - name: threeants
+        url: http://www.3ants.com/
+        http_response_status_code: 200
+        check_certificate_expiration: true
+      - name: webservice-brand
+        url: https://ws.smartbrandprotection.com/login
+        http_response_status_code: 405
+        check_certificate_expiration: true
+      - name: webservice-live
+        url: https://live-event.smartmediaprotection.com/login
+        http_response_status_code: 405
+        check_certificate_expiration: true
+      - name: webservice-media
+        url: https://ws.smartmediaprotection.com/login
+        http_response_status_code: 405
+        check_certificate_expiration: true
+      - name: webservice-publishing
+        url: https://ws.smartpublishingprotection.com/login
+        http_response_status_code: 405
+        check_certificate_expiration: true
+      - name: intranet-brand
+        url: https://brand.3antsds.com/
+        http_response_status_code: 200
+        check_certificate_expiration: true
+      - name: intranet-media
+        url: https://media.3antsds.com/
+        http_response_status_code: 200
+        check_certificate_expiration: true
+      - name: intranet-publishing
+        url: https://publishing.3antsds.com/
+        http_response_status_code: 200
+        check_certificate_expiration: true
+      - name: intranet-operations
+        url: https://operations.3antsds.com/sesiones/login
+        http_response_status_code: 200
+        check_certificate_expiration: true
+      - name: user-portal-brand
+        url: https://user-portal.smartbrandprotection.com/login/
+        http_response_status_code: 200
+        check_certificate_expiration: true
+      - name: user-portal-media
+        url: https://user-portal.smartmediaprotection.com/login/
+        http_response_status_code: 405
+        check_certificate_expiration: true
+      - name: user-portal-publishing
+        url: https://user-portal.smartpublishingprotection.com/login/
+        http_response_status_code: 405
+        check_certificate_expiration: true
+      - name: shadown-media
+        url: https://shadow.smartmediaprotection.com/v1.1/tasks
+        http_response_status_code: 401
+        check_certificate_expiration: true
+      - name: shadow-publishing
+        url: https://shadow.smartpublishingprotection.com/v1.1/tasks
+        http_response_status_code: 401
+        check_certificate_expiration: true
+      - name: reports-api
+        url: https://api-report.3antsds.com/healthcheck
+        http_response_status_code: 200
+        check_certificate_expiration: true
+      - name: reports-brand
+        url: https://reports.smartbrandprotection.com/healthcheck
+        http_response_status_code: 200
+        check_certificate_expiration: true
+      - name: reports-media
+        url: https://reports.smartmediaprotection.com/healthcheck
+        http_response_status_code: 200
+        check_certificate_expiration: true
+      - name: reports-publishing
+        url: https://reports.smartpublishingprotection.com/healthcheck
+        http_response_status_code: 200
+        check_certificate_expiration: true
