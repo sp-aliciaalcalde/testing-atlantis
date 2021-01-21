@@ -16,6 +16,3 @@ workflows:
       steps:
         - init
         - plan
-    apply:
-      steps:
-        - apply
