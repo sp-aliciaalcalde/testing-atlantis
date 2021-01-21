@@ -10,4 +10,3 @@ projects:
       enabled: true
     apply_requirements: [mergeable, approved]
     workflow: new
-
