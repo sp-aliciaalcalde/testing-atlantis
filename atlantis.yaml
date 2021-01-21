@@ -8,5 +8,5 @@ projects:
     autoplan:
       when_modified: ["*.tf", "../../../modules/**.tf", "*.md"]
       enabled: true
-    apply_requirements: [mergeable, approved]
+    #apply_requirements: [mergeable, approved]
     workflow: new
