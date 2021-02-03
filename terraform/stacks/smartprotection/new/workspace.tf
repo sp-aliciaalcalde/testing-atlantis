@@ -4,12 +4,6 @@ locals {
     dev = {
       vpc_cidr = "10.10.0.0/16"
     }
-    stg = {
-      vpc_cidr = "10.2.0.0/16"
-    }
-    pro = {
-      vpc_cidr = "10.3.0.0/16"
-    }
   }
 }
 
