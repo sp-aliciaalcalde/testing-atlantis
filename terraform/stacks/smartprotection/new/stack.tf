@@ -6,9 +6,6 @@
 #####################
 
 
-
-
-
 # Main AWS Provider
 provider "aws" {
   region  = var.aws_region
@@ -39,7 +36,7 @@ data "aws_availability_zones" "available" {
 #####################
 # TF Modules
 #####################
-
+/*
 module "vpc" {
 
   source  = "terraform-aws-modules/vpc/aws"
@@ -64,4 +61,5 @@ module "vpc" {
   create_flow_log_cloudwatch_iam_role  = lookup(var.flow_log, "create_flow_log_cloudwatch_iam_role", false)
   create_flow_log_cloudwatch_log_group = lookup(var.flow_log, "create_flow_log_cloudwatch_log_group", false)
   tags = local.tags
-}
+}*/
+

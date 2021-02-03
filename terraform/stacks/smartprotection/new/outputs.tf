@@ -1,5 +1,5 @@
 # VPC
-output "database_route_table_ids" { value = module.vpc.database_route_table_ids }
+/*output "database_route_table_ids" { value = module.vpc.database_route_table_ids }
 output "database_subnets" { value = module.vpc.database_subnets }
 output "database_subnets_cidr_blocks" { value = module.vpc.database_subnets_cidr_blocks }
 output "igw_id" { value = module.vpc.igw_id }
@@ -13,7 +13,7 @@ output "public_subnets_cidr_blocks" { value = module.vpc.public_subnets_cidr_blo
 output "vpc_cidr" { value = module.vpc.vpc_cidr_block }
 output "vpc_flow_log_id" { value = module.vpc.vpc_flow_log_id }
 output "vpc_id" { value = module.vpc.vpc_id }
-
+*/
 # ECS Cluster
 #output "ecs_cluster_arn" { value = module.ecs_cluster.this_ecs_cluster_arn }
 #output "ecs_cluster_id" { value = module.ecs_cluster.this_ecs_cluster_id }
