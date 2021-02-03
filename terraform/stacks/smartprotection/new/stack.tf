@@ -14,7 +14,7 @@ provider "aws" {
   region  = var.aws_region
   #profile = "smart-${terraform.workspace}-admin"
   assume_role {
-    role_arn     = "local.workspace["aws_provider_role"]"
+    role_arn     = local.workspace["aws_provider_role"]
   }
 }
 
