@@ -9,14 +9,17 @@
 # Main AWS Provider
 provider "aws" {
   region  = var.aws_region
-  profile = "smart-${terraform.workspace}-admin"
+  #profile = "smart-${terraform.workspace}-admin"
+  assume_role {
+    role_arn     = "arn:aws:iam::203885735085:role/dev-smart-delegated-admin" 
+  }
 }
 
 # Root AWS Provider
-provider "aws" {
-  region = var.aws_region
-  alias  = "root"
-}
+#provider "aws" {
+#  region = var.aws_region
+#  alias  = "root"
+#}
 
 # OPS AWS Provider
 provider "aws" {
