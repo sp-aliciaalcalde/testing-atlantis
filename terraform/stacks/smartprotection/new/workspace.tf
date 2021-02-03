@@ -3,7 +3,7 @@ locals {
   context_variables = {
     dev = {
       vpc_cidr = "10.100.0.0/16"
-      aws_provider_role = "arn:aws:iam::203885735085:role/dev-smart-delegated-admin"
+      aws_assume_role = "arn:aws:iam::203885735085:role/dev-smart-delegated-admin"
     }
   }
 }
